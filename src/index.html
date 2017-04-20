@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="">
+
+<head>
+    <base href="/">
+    <meta charset="utf-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>angular 1.6 workshop</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+</head>
+
+<body ng-app="app" ng-strict-di>
+    <componente-padre2></componente-padre2>   
+    <hr>
+    <componente-padre></componente-padre>
+    
+    <!-- angular -->
+    <script src="vendor/angular.min.js"></script>
+
+    <!-- our app -->
+    <script src="app/app.js"></script>
+
+    <!-- servicios / factorías -->
+    <script src="app/services/demo-factory.js"></script>
+
+    <!-- componentes -->
+    <script src="app/components/componente-padre.js"></script>
+    
+    <script src="app/components/componente-padre2.js"></script>
+    <script src="app/components/componente-hijo.js"></script>
+
+</body>
+
+
+</html>
