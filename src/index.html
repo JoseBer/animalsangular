@@ -13,25 +13,35 @@
 </head>
 
 <body ng-app="app" ng-strict-di>
-    <componente-padre2></componente-padre2>   
-    <hr>
-    <componente-padre></componente-padre>
-    
+     <view-main></view-main> 
+
+
     <!-- angular -->
     <script src="vendor/angular.min.js"></script>
 
     <!-- our app -->
     <script src="app/app.js"></script>
 
-    <!-- servicios / factorías -->
-    <script src="app/services/demo-factory.js"></script>
+    <!-- servicios / factorï¿½as -->
+    <script src="app/services/animals-factory.js"></script>
 
     <!-- componentes -->
-    <script src="app/components/componente-padre.js"></script>
-    
-    <script src="app/components/componente-padre2.js"></script>
-    <script src="app/components/componente-hijo.js"></script>
+    <!-- main -->
+    <script src="app/components/viewmain/view-main.js"></script>
+    <script src="app/components/viewmain/animalsList/animals-list.js"></script>
+    <script src="app/components/viewmain/animalscard/animals-card.js"></script>
 
+    <!-- detail -->
+    <script src="app/components/viewdetail/view-detail.js"></script>
+
+    <!-- common -->
+    <script src="app/components/commons/footer/footer.js"></script>
+    <script src="app/components/commons/header/header.js"></script>
+
+    
+    
+
+ 
 </body>
 
 
