@@ -1,9 +1,13 @@
-<my-header></my-header>
 <section>
     <h5>Componente principal detalle pantalla 2</h5>
-
-    
-
+    <div>
+        <div class="list-animals-card">
+        <div class="list-animals-card-title">
+            {{ animalsCard.itemAnimal.name }}
+        </div>
+        <!-- Con la directiva ng-src podemos definir la ruta de las imágenes
+     de forma dinámica -->
+        <img ng-src="app/styles/imgs/{{animalsCard.itemAnimal.img}}" class="list-animals-card-img">
+    </div>
+    </div>
 </section>
-<br>
-<my-footer></my-footer>

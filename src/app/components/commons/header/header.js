@@ -4,13 +4,13 @@
     // otra opción es poner aquí directamente el html asignándoselo a template:
     templateUrl:  'app/components/commons/header/header.html',
     // en controller definimos la función que escribimos abajo
-    controller: controladorHeader,
+    controller:['$state', controladorHeader],
     // declaramos un alias para no tener que usar $ctrl.
     controllerAs: 'myHeader'
   });
 
   /* En esta función escribimos la lógica del controlador */
-  function controladorHeader() {
+  function controladorHeader($state) {
     /* Cacheamos this para evitar rarismos */
     var vm = this;
     
@@ -19,6 +19,9 @@
     vm.$onInit = function() {
         console.log('cargo cabecera');
         vm.title="TIENDA DE ANIMALES RAROS COMO EL ORNITORRINCO";
+    }
+    vm.goToHome=function (){
+      $state.go('main');
     }
   }
      

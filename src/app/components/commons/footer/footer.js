@@ -4,13 +4,13 @@
     // otra opción es poner aquí directamente el html asignándoselo a template:
     templateUrl:  'app/components/commons/footer/footer.html',
     // en controller definimos la función que escribimos abajo
-    controller: controladorFooter,
+    controller: ['$state',controladorFooter],
     // declaramos un alias para no tener que usar $ctrl.
     controllerAs: 'myFooter'
   });
 
   /* En esta función escribimos la lógica del controlador */
-  function controladorFooter() {
+  function controladorFooter($state) {
     /* Cacheamos this para evitar rarismos */
     var vm = this;
     
@@ -20,6 +20,9 @@
         console.log("cargo el footer");
         vm.footer="Derechos reservados pal primero que compre";
 
+    }
+    vm.goToAbout=function (){
+      $state.go('aboutUs');
     }
   }
      

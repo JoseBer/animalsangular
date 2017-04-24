@@ -2,20 +2,29 @@
 
   angular.module('app').component('animalsList', {
     templateUrl: 'app/components/viewmain/animalsList/animals-list.html',
-    controller: ['animalsFactory', animalsList],
+    controller: ['$state','animalsFactory', animalsList],
     controllerAs: 'animalsList'
   });
 
-  function animalsList(animalsFactory) {
+  function animalsList($state,animalsFactory) {
     var vm = this;
 
     vm.$onInit = function () {
       vm.allAnimals = animalsFactory.getAllAnimals();
+      vm.currentPosition = 'up';
     };
-    vm.showDetail = function () {
+    vm.goToDetail = function (_idAnimal_) {
       //Aqui vamos a la vista detalle
       
-      console.log('DETALLEEEEEEE');
+      
+      $state.go('detail',{idAnimal:_idAnimal_});
+      
+    };
+    vm.sortList = function(_position_) {
+      if ( _position_ !== vm.currentPosition ) {
+        vm.allAnimals.reverse();
+        vm.currentPosition = _position_;
+      }
     };
   }
 
